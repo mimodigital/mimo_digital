@@ -204,7 +204,7 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#F1F5F9] text-slate-700 selection:bg-slate-500 selection:text-white antialiased font-sans pb-12">
+    <div className="relative min-h-screen bg-[#F1F5F9] text-slate-700 selection:bg-slate-500 selection:text-white antialiased font-sans pb-12 overflow-x-hidden">
       
       {/* Cool Silver/Titanium background glows */}
       <div className="absolute top-[5%] left-1/4 w-[500px] h-[500px] bg-slate-300/30 rounded-full blur-[100px] pointer-events-none -z-10"></div>
@@ -218,11 +218,11 @@ function App() {
       {/* 1. Navbar */}
       <nav className="fixed top-0 left-0 w-full z-40 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 sm:mt-5">
-          <div className="glass-navbar rounded-2xl px-6 py-4.5 flex justify-between items-center border border-slate-800">
+          <div className="glass-navbar rounded-2xl px-4 sm:px-6 py-3.5 sm:py-4 flex justify-between items-center border border-slate-800">
             
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <a href="#" className="flex items-center space-x-3 group">
+              <a href="#" className="flex items-center space-x-2 sm:space-x-3 group">
                 <div className="bg-white px-2 py-0.5 rounded-xl shadow-sm transition-all hover:bg-slate-50">
                   <img 
                     src="/logo.png" 
@@ -230,7 +230,7 @@ function App() {
                     className="h-8 sm:h-9.5 w-auto object-contain"
                   />
                 </div>
-                <span className="text-lg sm:text-xl font-black tracking-wider text-white font-display group-hover:text-slate-200 transition-colors">
+                <span className="text-base sm:text-lg md:text-xl font-black tracking-wider text-white font-display group-hover:text-slate-200 transition-colors">
                   MIMO DIGITAL
                 </span>
               </a>
