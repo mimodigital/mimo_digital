@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f8fafc;
+  --color-primary-100: #f1f5f9;
+  --color-primary-200: #e2e8f0;
+  --color-primary-300: #cbd5e1;
+  --color-primary-400: #94a3b8;
+  --color-primary-500: #64748b; /* Cool Silver Grey / Slate */
+  --color-primary-600: #475569; /* Polished Titanium */
+  --color-primary-700: #334155;
+  --color-primary-800: #1e293b;
+  --color-primary-900: #0f172a;
+  --color-primary-950: #020617;
+
+  --color-accent-50: #f0fdf4;
+  --color-accent-100: #dcfce7;
+  --color-accent-500: #059669; /* Soft Emerald */
+  --color-accent-600: #047857;
+
+  --color-slate-custom-900: #0F172A;
+  --color-slate-custom-850: #1E293B;
+  --color-slate-custom-700: #334155;
+
+  --font-sans: "Inter", "system-ui", "-apple-system", "sans-serif";
+  --font-display: "Plus Jakarta Sans", "Inter", "system-ui", "sans-serif";
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-slate-700 bg-[#F1F5F9] font-sans overflow-x-hidden;
+    background-image: 
+      radial-gradient(circle at 15% 15%, rgba(148, 163, 184, 0.08) 0%, transparent 45%),
+      radial-gradient(circle at 85% 85%, rgba(71, 85, 105, 0.06) 0%, transparent 45%);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight text-slate-900;
+  }
+}
+
+/* Glassmorphism Cards & Panels (Dominant Silver Light Mode) */
+.glass-card {
+  background: rgba(248, 250, 252, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 30px -10px rgba(100, 116, 139, 0.15), 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.glass-card-hover {
+  @apply transition-all duration-300;
+}
+.glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(148, 163, 184, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(100, 116, 139, 0.22), 0 4px 6px -1px rgba(100, 116, 139, 0.03);
+  transform: translateY(-3px);
+}
+
+.glass-navbar {
+  background: #0F172A; /* solid deep blue */
+  border-bottom: 1px solid #1E293B;
+}
+
+/* Premium Metallic shadows */
+.shadow-soft {
+  box-shadow: 0 10px 35px -10px rgba(100, 116, 139, 0.12);
+}
+
+.shadow-soft-lg {
+  box-shadow: 0 25px 50px -12px rgba(100, 116, 139, 0.18);
+}
+
+/* Premium Scrollbars (Clean Slate) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Custom Micro-Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.02); opacity: 0.98; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s infinite ease-in-out;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Brushed Silver Titanium Ambient Glow */
+.hero-glow {
+  background: radial-gradient(circle, rgba(148, 163, 184, 0.12) 0%, rgba(203, 213, 225, 0.06) 50%, transparent 100%);
+}
